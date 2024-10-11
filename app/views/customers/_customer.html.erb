@@ -1,7 +1,16 @@
 <div class="customer-card">
-  <%= image_tag customer.image.variant(resize_to_limit: [300, 300]) if customer.image.attached? %>
-  <h3><%= customer.name %></h3>
-  <p><strong>Province:</strong> <%= customer.province %></p>
-  <p><%= customer.phone %></p>
-  <p><%= customer.email %></p>
+  <div class="customer-image">
+    <% if customer.image.attached? %>
+      <%= image_tag url_for(customer.image), size: "150x150", alt: "#{customer.full_name}'s image" %>
+    <% else %>
+      <p>No image available</p>
+    <% end %>
+  </div>
+
+  <div class="customer-info">
+    <h3 class="customer-name"><%= customer.full_name %></h3>
+    <p class="customer-email"><%= customer.email.presence || 'Email not provided' %></p>
+    <p class="customer-phone"><%= customer.phone_number %></p>
+    <p class="customer-province"><%= customer.province %></p>
+  </div>
 </div>
