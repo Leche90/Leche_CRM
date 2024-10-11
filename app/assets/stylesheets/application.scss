@@ -1,0 +1,56 @@
+// Sass variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// Add Bulma for non-admin styles
+@import "bulma/css/bulma.css";
+
+.dashboard-header h1 {
+  margin-bottom: 10px; /* Adjust this value to reduce spacing */
+}
+
+.dashboard-subheader {
+  font-size: 18px; /* Adjust the size of the subheader if needed */
+  margin-top: 0; /* Reduce any extra space from the top */
+}
+
+// Custom styles for customer cards
+.customer-card {
+  display: inline-block;
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.customer-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.customer-card h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.customer-card p {
+  font-size: 14px;
+}
+
+// Overriding any non-variable Sass must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+

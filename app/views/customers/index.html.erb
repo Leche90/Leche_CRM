@@ -1,5 +1,12 @@
-<h1>All Customers</h1>
-
-<div class="customers-list">
-  <%= render @customers %>
+<div class="container"> 
+  <h1 class="title">All Customers</h1>
+  <div class="columns is-multiline">
+    <% @customers.each do |customer| %>
+      <div class="column is-one-quarter">
+        <!-- Render the customer partial for each customer -->
+        <%= render partial: "customers/customer", locals: { customer: customer } %>
+      </div>
+    <% end %>
+  </div>
 </div>
+

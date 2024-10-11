@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Root route (Update this to match the controller and action you need)
-  root "posts#index"
+  root "customers#index"
 
   # Add routes for customers
   resources :customers, only: [:index, :show]

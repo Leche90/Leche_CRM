@@ -1,16 +1,11 @@
 <div class="customer-card">
-  <div class="customer-image">
-    <% if customer.image.attached? %>
-      <%= image_tag url_for(customer.image), size: "150x150", alt: "#{customer.full_name}'s image" %>
-    <% else %>
-      <p>No image available</p>
-    <% end %>
-  </div>
-
-  <div class="customer-info">
-    <h3 class="customer-name"><%= customer.full_name %></h3>
-    <p class="customer-email"><%= customer.email.presence || 'Email not provided' %></p>
-    <p class="customer-phone"><%= customer.phone_number %></p>
-    <p class="customer-province"><%= customer.province %></p>
-  </div>
+  <% if customer.image.attached? %>
+    <%= image_tag url_for(customer.image), alt: "#{customer.full_name}'s image", size: "225x300", class: "customer-image" %>
+  <% else %>
+    <%= image_tag "https://via.placeholder.com/150", alt: "No image available", size: "150x150" %>
+  <% end %>
+  <h3><%= customer.full_name %></h3>
+  <p><strong>Province:</strong> <%= customer.province %></p>
+  <p><%= customer.phone_number %></p>
+  <p><%= customer.email.present? ? customer.email : 'No email provided' %></p>
 </div>
