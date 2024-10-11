@@ -1,0 +1,7 @@
+<div class="customer-card">
+  <%= image_tag customer.image.variant(resize_to_limit: [300, 300]) if customer.image.attached? %>
+  <h3><%= customer.name %></h3>
+  <p><strong>Province:</strong> <%= customer.province %></p>
+  <p><%= customer.phone %></p>
+  <p><%= customer.email %></p>
+</div>
