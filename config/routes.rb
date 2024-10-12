@@ -13,8 +13,18 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
+  resources :customers, only: [:index] do
+    collection do
+      get 'missing_email'
+      get 'alphabetized'
+    end
+  end
+
   # Root route (Update this to match the controller and action you need)
   root "customers#index"
+
+  get 'customers/alphabetized', to: 'customers#alphabetized', as: 'customers_alphabetized'
+  get 'customers/missing_email', to: 'customers#missing_email', as: 'customers_missing_email'
 
   # Add routes for customers
   resources :customers, only: [:index, :show]

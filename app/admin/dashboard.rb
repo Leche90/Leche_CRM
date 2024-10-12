@@ -27,13 +27,7 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      # Admin Information Section
-      column do
-        panel "Admin Information" do
-          para "Use this section to view recent customer activity, manage resources, and perform administrative tasks."
-          para "Ensure to regularly check and update customer information to maintain data accuracy."
-        end
-      end
+
     end
   end
 end

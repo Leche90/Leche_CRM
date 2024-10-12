@@ -1,7 +1,7 @@
-<!-- app/views/customers/index.html.erb -->
+<!-- app/views/customers/alphabetized.html.erb -->
 
 <div class="container">
-  <h1 class="title">All Customers</h1>
+  <h1 class="title">Alphabetized Customers</h1>
   <div class="columns is-multiline">
     <% @customers.each do |customer| %>
       <div class="column is-one-quarter" style="padding: 10px;">
@@ -14,8 +14,8 @@
   </div>
 </div>
 
+
 <div class="buttons">
-  <%= link_to 'Alphabetized Customers', customers_alphabetized_path, class: "button is-dark" %>
+  <%= link_to 'All Customers', root_path, class: "button is-dark" %>
   <%= link_to 'Customers Missing Email', customers_missing_email_path, class: "button is-dark" %>
 </div>
-
