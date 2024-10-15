@@ -1,0 +1,11 @@
+<div class="customer-card">
+  <% if customer.image.attached? %>
+    <%= image_tag url_for(customer.image), alt: "#{customer.full_name}'s image", size: "225x300", class: "customer-image" %>
+  <% else %>
+    <%= image_tag "https://via.placeholder.com/150", alt: "No image available", size: "150x150" %>
+  <% end %>
+  <h3><%= customer.full_name %></h3>
+  <p><strong>Province:</strong> <%= customer.province %></p>
+  <p><%= customer.phone_number %></p>
+  <p><%= customer.email.present? ? customer.email : 'No email provided' %></p>
+</div>

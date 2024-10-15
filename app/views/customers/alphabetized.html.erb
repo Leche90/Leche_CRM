@@ -1,0 +1,21 @@
+<!-- app/views/customers/alphabetized.html.erb -->
+
+<div class="container">
+  <h1 class="title">Alphabetized Customers</h1>
+  <div class="columns is-multiline">
+    <% @customers.each do |customer| %>
+      <div class="column is-one-quarter" style="padding: 10px;">
+        <!-- Render the customer partial for each customer -->
+        <div style="margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 8px;">
+          <%= render partial: "customers/customer", locals: { customer: customer } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="buttons">
+  <%= link_to 'All Customers', root_path, class: "button is-dark" %>
+  <%= link_to 'Customers Missing Email', customers_missing_email_path, class: "button is-dark" %>
+</div>
